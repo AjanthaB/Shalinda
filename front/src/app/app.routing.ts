@@ -50,9 +50,18 @@ export const routes: Routes = [
       title: 'Home'
     },
     children: [
+      // {
+      //   path: '',
+      //   redirectTo: 'employees',
+      //   pathMatch: 'full'
+      // },
       {
         path: 'base',
         loadChildren: './views/base/base.module#BaseModule'
+      },
+      {
+        path: 'employees',
+        loadChildren: './views/employees/employees.module#EmployeesModule'
       },
       {
         path: 'buttons',

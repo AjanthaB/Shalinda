@@ -28,14 +28,14 @@ export const navItems = [
   // },
   {
     name: 'Master',
-    url: '/base',
+    url: '',
     icon: 'icon-puzzle',
     children: [
       {
         name: 'Employees',
-        url: '/base/employees',
+        url: '/employees',
         icon: 'icon-puzzle'
-      },    
+      },
     ]
   },
   {

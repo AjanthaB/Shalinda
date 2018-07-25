@@ -48,13 +48,17 @@ module.exports.getEmployeeById = (req, res) => {
 module.exports.create = (req, res) => {
   const employee = new Employee(req.body);
   
-  employee.save((err, employee, ) => {
+  employee.save((err, employee) => {
     if (err)
       return res.status(500)
-        .json({ error: true, message: err.message })
+        .json({ error: true, message: err.message });
 
-    return res.status(201)
-      .json(employee)
+    employee.populate("empType")
+      .execPopulate()
+      .then(employee => res.status(201)
+        .json(employee))
+      .catch(err => res.status(500)
+        .json({ error: true, message: err.message }))
   })
 }
 

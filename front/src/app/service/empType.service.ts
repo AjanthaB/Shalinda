@@ -15,11 +15,11 @@ const httpOptions = {
 })
 export class EmpTypeService {
 
-  private url = 'api/v1/empTypes';  // URL to web api
+  private url = 'http://localhost:5000/api/v1/empTypes';  // URL to web api
 
   constructor(private http: HttpClient) { }
 
-    getEmpTypes(): Observable<EmpType[]> {      
-      return this.http.get<EmpType[]>(this.url)
+    getEmpTypes(): Observable<EmpType[]> {
+      return this.http.get<EmpType[]>(this.url);
     }
 }

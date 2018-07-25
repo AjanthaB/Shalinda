@@ -10,8 +10,8 @@ import { FormsComponent } from './forms.component';
 
 import { SwitchesComponent } from './switches.component';
 import { TablesComponent } from './tables.component';
-import { EmployeesComponent } from './employees.component';
-import { EmployeeComponent } from './employee.component';
+// import { EmployeesComponent } from './employees.component';
+// import { EmployeeComponent } from './employee.component';
 
 // Tabs Component
 import { TabsModule } from 'ngx-bootstrap/tabs';
@@ -67,8 +67,8 @@ import { BaseRoutingModule } from './base-routing.module';
     FormsComponent,
     SwitchesComponent,
     TablesComponent,
-    EmployeesComponent,
-    EmployeeComponent,
+    // EmployeesComponent,
+    // EmployeeComponent,
     TabsComponent,
     CarouselsComponent,
     CollapsesComponent,

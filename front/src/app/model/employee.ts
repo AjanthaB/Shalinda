@@ -1,9 +1,9 @@
 import { EmpType } from './empType';
 
-export class Employee {
+export interface Employee {
     _id: string;
     name: string;
     age: string;
     salary: string;
-    empType: EmpType = new EmpType;
+    empType: EmpType;
 }

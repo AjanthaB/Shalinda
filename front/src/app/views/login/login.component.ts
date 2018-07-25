@@ -5,18 +5,18 @@ import { Router } from '@angular/router';
   selector: 'app-dashboard',
   templateUrl: 'login.component.html'
 })
-export class LoginComponent { 
-  @Input() username: string
-  @Input() password: string
+export class LoginComponent {
+  @Input() username: string;
+  @Input() password: string;
 
   constructor(private router: Router) {}
 
   login() {
-    console.debug('User: ', this.username, ' Password: ', this.password)
-    if (this.username === 'admin' && this.password ==='admin') {
-      this.router.navigateByUrl('/base/employees')
+    console.log('User: ', this.username, ' Password: ', this.password);
+    if (this.username === 'admin' && this.password === 'admin') {
+      this.router.navigateByUrl('/employees');
     } else {
-      this.router.navigateByUrl('/login')
+      this.router.navigateByUrl('/login');
     }
   }
 }

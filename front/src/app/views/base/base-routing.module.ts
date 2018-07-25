@@ -5,8 +5,8 @@ import { CardsComponent } from './cards.component';
 import { FormsComponent } from './forms.component';
 import { SwitchesComponent } from './switches.component';
 import { TablesComponent } from './tables.component';
-import { EmployeesComponent } from './employees.component';
-import { EmployeeComponent } from './employee.component';
+// import { EmployeesComponent } from './employees.component';
+// import { EmployeeComponent } from './employee.component';
 import { TabsComponent } from './tabs.component';
 import { CarouselsComponent } from './carousels.component';
 import { CollapsesComponent } from './collapses.component';
@@ -22,13 +22,13 @@ const routes: Routes = [
       title: 'Master'
     },
     children: [
-      {
-        path: 'employees',
-        component: EmployeesComponent,
-        data: {
-          title: 'Employees'
-        }
-      },                   
+      // {
+      //   path: 'employees',
+      //   component: EmployeesComponent,
+      //   data: {
+      //     title: 'Employees'
+      //   }
+      // },
       {
         path: 'cards',
         component: CardsComponent,
@@ -43,13 +43,13 @@ const routes: Routes = [
           title: 'Forms'
         }
       },
-      {
-        path: 'employee/:id',
-        component: EmployeeComponent,
-        data: {
-          title: 'Employee'
-        }
-      },
+      // {
+      //   path: 'employee/:id',
+      //   component: EmployeeComponent,
+      //   data: {
+      //     title: 'Employee'
+      //   }
+      // },
       {
         path: 'switches',
         component: SwitchesComponent,

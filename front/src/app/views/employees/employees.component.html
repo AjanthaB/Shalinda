@@ -1,0 +1,128 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> Employees
+        </div>
+
+        <div class="card-body">
+
+
+          <!-- <div>
+            <app-employee [employee]="selectedEmployee"></app-employee>
+          </div> -->
+
+
+          <form [formGroup]="_employeeForm" class="form-horizontal">
+          
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="name">Name:</label>
+              <div class="col-md-9">
+                <input type="text" formControlName="name" class="form-control" placeholder="Enter Name..">
+                <div class="form-control-feedback" *ngIf="_employeeForm.controls.name.errors && (_employeeForm.controls.name.dirty || _employeeForm.controls.name.touched)">
+                  <p class="error-msg" *ngIf="_employeeForm.controls.name.errors.required">Please enter Name</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="name">Age:</label>
+              <div class="col-md-9">
+                <input type="number" min="0" formControlName="age" class="form-control" placeholder="Enter Age..">
+                <div class="form-control-feedback" *ngIf="_employeeForm.controls.age.errors && (_employeeForm.controls.age.dirty || _employeeForm.controls.age.touched)">
+                  <p class="error-msg" *ngIf="_employeeForm.controls.age.errors.required">Please enter Age</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="salary">Salary:</label>
+              <div class="col-md-9">
+                <input type="number"  formControlName="salary" class="form-control" placeholder="Enter Salary..">
+                <div class="form-control-feedback" *ngIf="_employeeForm.controls.salary.errors && (_employeeForm.controls.salary.dirty || _employeeForm.controls.salary.touched)">
+                  <p class="error-msg" *ngIf="_employeeForm.controls.salary.errors.required">Please enter Salary</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label"> User Role:</label>
+              <div class="col-md-9">
+                <select class="form-control" formControlName="empType" [compareWith]="compareRole">
+                  <!-- <option value="">Select Role</option> -->
+                  <option *ngFor="let _empType of _empTypes" value="{{_empType._id}}">{{_empType?.name}}</option>
+                </select>
+                <div class="form-control-feedback" *ngIf="_employeeForm.controls.empType.errors && (_employeeForm.controls.empType.dirty || _employeeForm.controls.empType.touched)">
+                  <p class="error-msg" *ngIf="_employeeForm.controls.empType.errors.required">Please Select a Type</p>
+                </div>
+              </div>
+            </div>
+          
+          
+            <!-- <div class="form-group row">
+              <label class="col-md-3 col-form-label"> Active:</label>
+              <div class="col-md-9">
+                <input type="checkbox" formControlName="active" class="form-control">
+              </div>
+            </div> -->
+
+            <div class="row" style="float:right;margin-bottom: 20px;">
+              <button style="margin: 0 3px;" type="submit" class="btn btn-small btn-primary" (click)="save()">Save</button>
+              <button style="margin: 0 3px;" type="submit" class="btn btn-small btn-primary" (click)="updateEmployee()">Update</button>
+              <button style="margin: 0 3px;" type="button" class="btn btn-small btn-primary" (click)="deleteEmployee()">Delete</button>
+              <!-- <button style="margin: 0 3px;" type="button" class="btn btn-small btn-primary" (click)="clear()">New</button> -->
+            </div>
+          
+          </form>
+
+  
+
+
+
+          <div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Salary</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr  *ngFor="let employee of employees"
+                  [ngClass]="{'selected-tr': employee?._id === _selectedEmployee?._id}"
+                  (click)="selectEmployee(employee)">
+                  <td>{{employee.name}}</td>
+                  <td>{{employee.age}}</td>
+                  <td>{{employee.salary}}</td>
+                  <td>{{employee.empType.name}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#">Prev</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">4</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
